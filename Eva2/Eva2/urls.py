@@ -19,9 +19,9 @@ from Aplicacion.views import index, listado_doctores, registro_doctor, eliminar_
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index.html',index),
-    path('listado_doctores.html',listado_doctores),
-    path('registro_doctor.html',registro_doctor),
+    path('',index),
+    path('listado_doctores',listado_doctores),
+    path('registro_doctor',registro_doctor),
     path('eliminar_doctor/<id>',eliminar_doctor),
     path('modificar_doctor/<id>',modificar_doctor)
 ]

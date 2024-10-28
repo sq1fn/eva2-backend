@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>LISTADO DE DOCTORES </div>
+    {%if doctores %}
+    <table class="table">
+        <thead> 
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Rut</th>
+                <th>Fecha de nacimiento</th>
+                <th>Especialidad</th>
+                <th>Correo</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {%for doctor in doctores%}
+            <tr>
+                <td>{{doctor.nombre_doctor}}</td>
+                <td>{{doctor.apellido_doctor}}</td>
+                <td>{{doctor.rut_doctor}}</td>
+                <td>{{doctor.fecha_nacimiento}}</td>
+                <td>{{doctor.especialidad}}</td>
+                <td>{{doctor.correo_doctor}}</td>
+
+                <td><a href="/modificar_doctor/{{doctor.id}}" class= "btn btn-sucess">Modificar</a></td>
+                <td><a href="/eliminar_doctor/{{doctor.id}}" class= "btn btn-danger">Eliminar</a></td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+    {%else%}
+    <div class="alert alert-info">No hay doctores registrados</div>
+    {%endif%}
+
+    <a href="/registro_doctor" class="btn btn-info">Registrar doctor</a>
+    <a href="../" class="btn btn-danger">Volver</a>
+</body>
+</html>
